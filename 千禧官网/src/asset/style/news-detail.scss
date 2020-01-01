@@ -1,0 +1,56 @@
+.crumbs{
+  height:94px;
+  line-height: 94px;
+  a{
+    color:#919191;
+    &.active{
+      color:#e78d0e;
+    }
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+.article{
+  margin-bottom:175px;
+  .title{
+    height:80px;
+    line-height: 80px;
+    font-size:26px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .date{
+    width:128px;
+    height: 20px;
+    line-height: 20px;
+    margin:0 auto;
+    i.icon{
+      width:16px;
+      height:16px;
+      display: block;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -51px -111px; 
+      margin-right:20px;
+      margin-top: 3px;
+      float:left;
+    }
+    span{
+      float:left;
+      color:#919191;
+    }
+  }
+  .text{
+    margin-top: 25px;
+    padding-top:15px;
+    font-size:16px;
+    line-height: 35px;
+    color:#6e6e6e;
+    border-top:1px solid #e5e5e5;
+    img{
+      width:80%;
+      margin:0 auto;
+    }
+  }
+}

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="robots" content="all">
+  <meta name="author" content="GoWan" />
+  <meta name="Copyright" content="GoWan" />
+  <meta name="Description" content="GO玩游戏" />
+  <meta name="Keywords" content="GO玩游戏" />
+  <title>Go玩游戏 - 至劲网络</title>
+  <script src="./asset/vendor/jquery/dist/jquery.min.js?v=1.1"></script>
+  <script src="./asset/js/index.js?v=1.1"></script>
+  <link rel="stylesheet" href="./asset/css/common/rest.css?v=1.1">
+  <link rel="stylesheet" href="./asset/css/common/common.css?v=1.1">
+  <link rel="stylesheet" href="./asset/css/index.css?v=1.1">
+  <script>
+    $(document).ready(function () {
+      PAGE.fn.banner();
+      PAGE.fn.tab({
+        'nav': '.tab-list .item',
+        'show': '.tab-img',
+        'active': 'active'
+      });
+      PAGE.fn.cut()
+    });
+  </script>
+</head>
+
+<body>
+  @import "header.html"
+  <!--首屏开始-->
+  <div class="page1">
+    <div class="banner" id="banner">
+      <ul>
+        <!--图片容器开始-->
+        <li style="background-image:url('./asset/image/banner1.jpg')">
+          <a href="./news-detail-3.html"></a>
+          <div class="banner-container">
+            <div class="banner-des banner-left">
+              <h2>大型3D仙恋回合制手游</h2>
+              <h2> 《仙凡幻想》震撼来袭！</h2>
+              <div class="line"></div>
+              <div class="descript">
+                好玩不止一回合，大型3D仙恋回合制手游《仙凡幻想》震撼来袭！职业平衡，相互克制，阵容多变，趣味繁多，无限制自由养成，花海婚礼，缘定三生，为每一个仙恋热爱者，开启一场不一样的青春回合之旅，我在《仙凡幻想》等你来战！
+              </div>
+              <div class="check">查看详情</div>
+            </div>
+          </div>
+        </li>
+        <li style="background-image:url('./asset/image/banner2.jpg')">
+          <a href="./news-detail-1.html"></a>
+          <div class="banner-container">
+            <div class="banner-des banner-right">
+              <h2>年度巨制魔幻大作</h2>
+              <h2>并肩打造属于你的传奇</h2>
+              <div class="line"></div>
+              <div class="descript">
+                超越主机的次世代声画，唯美的欧式建筑，为你展现魔幻大陆的恢弘动荡！飞龙狩猎，野外团战，专属转职等多元化玩法应有尽有，离线挂机免除你的后顾之忧。黎明即将破晓，来这里创造属于你的风暴纪元。
+              </div>
+              <div class="check">查看详情</div>
+            </div>
+          </div>
+        </li>
+        <li style="background-image:url('./asset/image/banner3.jpg')">
+          <a href="./news-detail-2.html"></a>
+          <div class="banner-container">
+            <div class="banner-des banner-left">
+              <h2>重现经典唯美古风</h2>
+              <h2>登顶不一样的个性手游</h2>
+              <div class="line"></div>
+              <div class="descript">
+                倾力打造原汁原味回归官场时代，养成与策略相结合的休闲类游戏，汇聚各朝代能人异士文才武略，更有绝世美女与君相伴，在这乱世纷争之中天下一统，抉择由君。
+              </div>
+              <div class="check">查看详情</div>
+            </div>
+          </div>
+        </li>
+        <!--图片容器结束-->
+      </ul>
+      <!--首屏大图分液器开始-->
+      <div style="position:relative;width:1200px;margin:0 auto;top:648px;z-index: 999;">
+        <div class="pagetion"></div>
+      </div>
+      <!--首屏大图分液器结束-->
+      <!--首屏大图切换按钮开始-->
+      <i class="prve" id="prve"></i>
+      <i class="next" id="next"></i>
+      <!--首屏大图切换按钮结束-->
+    </div>
+    <!--tab切换开始-->
+    <div class="tab">
+      <div class="container">
+        <div class="tab-list">
+          <div class="item active">
+            <a href="./news-detail-3.html">
+              <div class="game_icon">
+                <img src="./asset/image/1.png" alt="" width="54px">
+              </div>
+              <div class="game_des">
+                <p class="title">萌新如何快速冲级</p>
+                <p class="descript">对于萌新来说，前期该如何快速的升级呢？</p>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="./news-detail-1.html">
+              <div class="game_icon">
+                <img src="./asset/image/2.png" alt="" width="54px">
+              </div>
+              <div class="game_des">
+                <p class="title">《黎明风暴》新手快速升级指南</p>
+                <p class="descript">初入《黎明风暴》魔幻世界，面对广阔的场景地......</p>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="./news-detail-2.html">
+              <div class="game_icon">
+                <img src="./asset/image/3.png" alt="" width="54px">
+              </div>
+              <div class="game_des">
+                <p class="title">《极品大官人》萌新升官秘籍</p>
+                <p class="descript">既然主题是教大家如何去更好的在游戏中 提升自己，那么我也就直接打开天窗说亮话，直奔主题了！</p>
+              </div>
+            </a>
+          </div>
+
+
+        </div>
+        <div class="tab-container">
+          <div class="tab-contai1 tab-img" style="display:block;">
+            <a href="./news-detail-3.html">
+              <img src="./asset/image/tab1.jpg" alt="">
+            </a>
+          </div>
+          <div class="tab-contai2 tab-img">
+            <a href="./news-detail-1.html">
+              <img src="./asset/image/tab2.jpg" alt="">
+            </a>
+          </div>
+          <div class="tab-contai3 tab-img">
+            <a href="./news-detail-2.html">
+              <img src="./asset/image/tab3.jpg" alt="">
+            </a>
+          </div>
+          <!-- <div class="tab-contai4 tab-img">
+            <a href="#">
+              <img src="./asset/image/tab1.jpg" alt="">
+            </a>
+          </div>
+          <div class="tab-contai5 tab-img">
+            <a href="#">
+              <img src="./asset/image/tab2.jpg" alt="">
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!--tab切换结束-->
+  </div>
+  <!--首屏结束-->
+  <!--热门游戏开始-->
+  <div class="page2 page">
+    <div class="container">
+      <div class="box-title">
+        <i class="title-icon"></i>
+        <p class="class-title">热门游戏</p>
+      </div>
+      <div class="hot-game-con">
+        <div class="hot">
+          <a href="https://game.wali.com/game/62233291" target="_blank">
+            <div class="hot-img">
+              <div class="hot-img-a">
+                <img src="./asset/image/web1.jpg">
+              </div>
+              <div class="hot-des">
+                <div class="hot-des-con">
+                  <div class="game-ewm">
+                    <img src="./asset/image/ewm1.png" width="130">
+                  </div>
+                  <div class="game-xi">
+                    <div class="game-type">
+                      <span>游戏类型</span> :
+                      <span>RPG</span>
+                    </div>
+                    <div class="game-start">
+                      <p>推荐星级:</p>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                    </div>
+                    <div class="game-down">
+                      <i class="down-icon"></i>
+                      <span>下载人数</span> :
+                      <span>500W</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hot-title">
+              《仙凡幻想》
+            </div>
+            <div class="hot-txt">
+              大型3D浪漫仙恋回合经典手游！凄美的仙妖恋事，萌翻天的战宠飞骑，百变的仙侠伙伴，伴你如梦似幻游九天！
+            </div>
+            <div class="go-web">
+              <span>进入官网</span>
+              <i></i>
+            </div>
+          </a>
+        </div>
+        <div class="hot">
+          <a href="https://game.wali.com/game/62246945" target="_blank">
+            <div class="hot-img">
+              <div class="hot-img-a">
+                <img src="./asset/image/web2.jpg">
+              </div>
+              <div class="hot-des">
+                <div class="hot-des-con">
+                  <div class="game-ewm">
+                    <img src="./asset/image/ewm2.png" width="130">
+                  </div>
+                  <div class="game-xi">
+                    <div class="game-type">
+                      <span>游戏类型</span> :
+                      <span>ARPG</span>
+                    </div>
+                    <div class="game-start">
+                      <p>推荐星级:</p>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                    </div>
+                    <div class="game-down">
+                      <i class="down-icon"></i>
+                      <span>下载人数</span> :
+                      <span>200W</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hot-title">
+              《黎明风暴》
+            </div>
+            <div class="hot-txt">
+              年度魔幻大作破晓来袭，以超越主机的次世代声画，唯美的欧式建筑，为你展现魔幻大陆的恢弘动荡！
+            </div>
+            <div class="go-web">
+              <span>进入官网</span>
+              <i></i>
+            </div>
+          </a>
+        </div>
+        <div class="hot">
+          <a href="http://www.gowan8.com" target="_blank">
+            <div class="hot-img">
+              <div class="hot-img-a">
+                <img src="./asset/image/web3.jpg">
+              </div>
+              <div class="hot-des">
+                <div class="hot-des-con">
+                  <div class="game-ewm">
+                    <img src="./asset/image/ewm3.png" width="130">
+                  </div>
+                  <div class="game-xi">
+                    <div class="game-type">
+                      <span>游戏类型</span> :
+                      <span>SLG</span>
+                    </div>
+                    <div class="game-start">
+                      <p>推荐星级:</p>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                      <i class="start-icon"></i>
+                    </div>
+                    <div class="game-down">
+                      <i class="down-icon"></i>
+                      <span>下载人数</span> :
+                      <span>80W</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hot-title">
+              《极品大官人》
+            </div>
+            <div class="hot-txt">
+              将权利完全掌握在自己手中，带来不一样的乐趣玩法上，堪比清宫大戏的剧情冒险，文治武功在朝廷上呼风唤雨！
+            </div>
+            <div class="go-web">
+              <span>进入官网</span>
+              <i></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--热门游戏结束-->
+  <!--新品测试开始-->
+  <!--
+  <div class="page3 page">
+    <div class="container">
+      <div class="box-title">
+        <i class="title-icon"></i>
+        <p class="class-title">新品测试</p>
+        <div class="right" id="cut">
+          <span style="color:red;font-size:14px;cursor: pointer;">换一组看看</span>
+        </div>
+      </div>
+      <div class="new-test-list">
+        <div class="box">
+          <div class="item">
+            <a href="#">
+              <div class="game-icon">
+                <img src="./asset/image/test1.png">
+              </div>
+              <div class="game-desc">
+                <div class="game-title">
+                  《仙凡幻想》
+                </div>
+                <div class="game-pla-info">
+                  全平台内测
+                </div>
+                <div class="down-info">
+                  <span class="num">下载 295w+</span>
+                  <span class="txt">人已下载</span>
+                </div>
+                <div class="time">
+                  <i></i>
+                  <span>7月20日</span>
+                </div>
+              </div>
+              <i class="go-icon"></i>
+              <div class="line"></div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <div class="game-icon">
+                <img src="./asset/image/test2.png">
+              </div>
+              <div class="game-desc">
+                <div class="game-title">
+                  《黎明之战》
+                </div>
+                <div class="game-pla-info">
+                  全平台内测
+                </div>
+                <div class="down-info">
+                  <span class="num">下载 295w+</span>
+                  <span class="txt">人已下载</span>
+                </div>
+                <div class="time">
+                  <i></i>
+                  <span>7月20日</span>
+                </div>
+              </div>
+              <i class="go-icon"></i>
+              <div class="line"></div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <div class="game-icon">
+                <img src="./asset/image/test3.png">
+              </div>
+              <div class="game-desc">
+                <div class="game-title">
+                  《极品大官人》
+                </div>
+                <div class="game-pla-info">
+                  全平台内测
+                </div>
+                <div class="down-info">
+                  <span class="num">下载 295w+</span>
+                  <span class="txt">人已下载</span>
+                </div>
+                <div class="time">
+                  <i></i>
+                  <span>7月20日</span>
+                </div>
+              </div>
+              <i class="go-icon"></i>
+              <div class="line"></div>
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="item">
+            <a href="#">
+              <div class="game-icon">
+                <img src="./asset/image/test3.png">
+              </div>
+              <div class="game-desc">
+                <div class="game-title">
+                  《极品大官人》
+                </div>
+                <div class="game-pla-info">
+                  全平台内测
+                </div>
+                <div class="down-info">
+                  <span class="num">下载 295w+</span>
+                  <span class="txt">人已下载</span>
+                </div>
+                <div class="time">
+                  <i></i>
+                  <span>7月20日</span>
+                </div>
+              </div>
+              <i class="go-icon"></i>
+              <div class="line"></div>
+            </a>
+          </div>
+
+          <div class="item">
+            <a href="#">
+              <div class="game-icon">
+                <img src="./asset/image/test1.png">
+              </div>
+              <div class="game-desc">
+                <div class="game-title">
+                  《仙凡幻想》
+                </div>
+                <div class="game-pla-info">
+                  全平台内测
+                </div>
+                <div class="down-info">
+                  <span class="num">下载 295w+</span>
+                  <span class="txt">人已下载</span>
+                </div>
+                <div class="time">
+                  <i></i>
+                  <span>7月20日</span>
+                </div>
+              </div>
+              <i class="go-icon"></i>
+              <div class="line"></div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <div class="game-icon">
+                <img src="./asset/image/test2.png">
+              </div>
+              <div class="game-desc">
+                <div class="game-title">
+                  《黎明之战》
+                </div>
+                <div class="game-pla-info">
+                  全平台内测
+                </div>
+                <div class="down-info">
+                  <span class="num">下载 295w+</span>
+                  <span class="txt">人已下载</span>
+                </div>
+                <div class="time">
+                  <i></i>
+                  <span>7月20日</span>
+                </div>
+              </div>
+              <i class="go-icon"></i>
+              <div class="line"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+  <!--新品测试结束-->
+
+  <!-- 加入我们开始 -->
+  <div class="join page">
+    <div class="container">
+      <div class="box-title">
+        <i class="title-icon"></i>
+        <p class="class-title">加入我们</p>
+      </div>
+      <div class="join-list">
+        <div class="item">
+          <a href="./join-us.html#technical">
+            <i class="point"></i>
+            <i class="com-icon"></i>
+            <span class="class-name">技术类</span>
+            <span class="class-en">Technical class</span>
+            <i class="technical-block"></i>
+          </a>
+        </div>
+        <div class="item">
+          <a href="./join-us.html#operation">
+            <i class="plan-point"></i>
+            <i class="plan-icon"></i>
+            <span class="class-name">运营类</span>
+            <span class="class-en">Operation class</span>
+            <i class="operation-block"></i>
+          </a>
+        </div>
+        <div class="item">
+          <a href="./join-us.html#design">
+            <i class="design-point"></i>
+            <i class="design-icon"></i>
+            <span class="class-name">美术类</span>
+            <span class="class-en">Design class</span>
+            <i class="design-block"></i>
+          </a>
+        </div>
+        <div class="item">
+          <a href="./join-us.html#distribution">
+            <i class="distribution-point"></i>
+            <i class="distribution-icon"></i>
+            <span class="class-name">发行类</span>
+            <span class="class-en">Distribution class</span>
+            <i class="distribution-block"></i>
+          </a>
+        </div>
+        <div class="item">
+          <a href="./join-us.html#functional">
+            <i class="functional-point"></i>
+            <i class="functional-icon"></i>
+            <span class="class-name">职能类</span>
+            <span class="class-en">Functional class</span>
+            <i class="functional-block"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 加入我们结束 -->
+
+  <!-- 合作伙伴开始 -->
+  <div class="partner page">
+    <div class="container">
+      <div class="box-title">
+        <i class="title-icon"></i>
+        <p class="class-title">合作伙伴</p>
+      </div>
+      <div class="partner-list">
+        <div class="item item-1">
+          <a href="http://sj.qq.com/myapp/" target="_blank"></a>
+        </div>
+        <div class="item item-2">
+          <a href="https://app.cdo.oppomobile.com/home/game" target="_blank"></a>
+        </div>
+        <div class="item item-3">
+          <a href="http://game.vmall.com/" target="_blank"></a>
+        </div>
+        <div class="item item-4">
+          <a href="https://game.vivo.com.cn" target="_blank"></a>
+        </div>
+        <div class="item item-5">
+          <a href="http://game.xiaomi.com" target="_blank"></a>
+        </div>
+        <div class="item item-6">
+          <a href="https://www.aligames.com/" target="_blank"></a>
+        </div>
+        <div class="item item-7">
+          <a href="https://www.taptap.com/" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 合作伙伴结束 -->
+
+  @import "footer.html"
+  <script>
+    $('#cut span').on('click', function () {
+      $('.page3').append(
+        "<div style='position:absolute;left:50%;top:50%;z-index:999' id='loading'><img src='./asset/image/loading.gif'></div>"
+      );
+      setTimeout(function () {
+        $('#loading').remove()
+        // $('.new-test-list .box .item').remove()
+      }, 300)
+    })
+  </script>
+</body>
+
+</html>

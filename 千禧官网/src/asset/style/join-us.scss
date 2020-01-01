@@ -1,0 +1,206 @@
+.job-nav{
+  margin:30px 0;
+  margin-left:-30px;
+  &:after{
+    clear:both;
+    display: block;
+    content:'';
+    overflow: hidden;
+    visibility: hidden;
+  }
+  .item{
+    width:216px;
+    height: 100px;
+    position: relative;
+    background-color: #fff;
+    border-radius:10px;
+    cursor: pointer;
+    float:left;
+    margin-left:30px;
+    &.active{
+      background-color: #ffed95; 
+    }
+    // &:hover{
+    //   background-color: #ffed95;
+    // }
+
+    i.point{
+      width:14px;
+      height: 14px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -452px -113px;
+      top:11px;
+      left:11px;
+    }
+    i.com-icon{
+      width:41px;
+      height: 33px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -106px 0;
+      top:34px;
+      left: 36px;
+    }
+    i.plan-icon{
+      width:41px;
+      height: 33px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -439px -216px;
+      top:34px;
+      left: 36px;
+    }
+    i.plan-point{
+      width:14px;
+      height: 14px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -452px -131px;
+      top:11px;
+      left:11px;
+    }
+    i.design-icon{
+      width:41px;
+      height: 33px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -106px -83px;
+      top:34px;
+      left: 36px;
+    }
+    i.design-point{
+      width:14px;
+      height: 14px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -452px -148px;
+      top:11px;
+      left:11px;
+    }
+    i.distribution-icon{
+      width:41px;
+      height: 33px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -110px -130px;
+      top:34px;
+      left: 36px;
+    }
+    i.distribution-point{
+      width:14px;
+      height: 14px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -452px -166px;
+      top:11px;
+      left:11px;
+    }
+    i.functional-icon{
+      width:41px;
+      height: 33px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -110px -166px;
+      top:34px;
+      left: 36px;
+    }
+    i.functional-point{
+      width:14px;
+      height: 14px;
+      display: block;
+      position: absolute;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      background-position: -452px -185px;
+      top:11px;
+      left:11px;
+    }
+    span.class-name{
+      position: absolute;
+      font-size: 14px;
+      top:32px;
+      left: 97px;
+    }
+    span.class-en{
+      position: absolute;
+      font-size: 10px;
+      top:55px;
+      left: 97px;
+    }
+  }
+}
+.job-list{
+  min-height: 800px;
+  .list{
+    display: none;
+  }
+  .item{
+    background:#fff;
+    padding:0 20px 20px 20px;
+    height: 214px;
+    border:1px solid #ebebeb;
+    overflow: hidden;
+    border-radius:5px;
+    position: relative;
+    margin-bottom:20px;
+    i.more{
+      width:34px;
+      height: 34px;
+      display: block;
+      background-image: url(../image/spring.png?v=23skdfk);
+      background-size:500px 500px;
+      position: absolute;
+      bottom:0;
+      right:0;
+      cursor: pointer;
+    }
+    .item-warp{
+      font-size:14px;
+
+      .job-title{
+        font-size:20px;
+        line-height:45px;
+        height:45px;
+        margin-top: 6px;
+      }
+      .job-text1{
+        height:30px;
+        line-height: 30px;
+        .person-num{
+          float:left;
+        }
+        .eamil{
+          float:left;
+          margin-left:26px;
+        }
+      }
+      .job-description{
+        line-height: 27px;
+      }
+      .job-requirements{
+        line-height: 30px;
+        padding-bottom:15px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
