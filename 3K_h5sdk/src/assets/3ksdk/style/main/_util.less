@@ -1,0 +1,66 @@
+@orange: #ff9725;
+
+.box(){
+    display:-webkit-box;
+    display:-moz-box;
+    // display:box;
+}
+.box-align(@arg){
+    -webkit-box-align: @arg;
+    -moz-box-align: @arg;
+    // box-align: @arg;
+    
+}
+.box-pack(@arg){
+-webkit-box-pack: @arg;
+    -moz-box-pack: @arg;
+    // box-pack: @arg;
+}
+.box-center() {
+    .box();
+    .box-align(center);
+    .box-pack(center);
+}
+.box-justify() {
+    .box();
+    .box-align(center);
+    .box-pack(justify);
+}
+.box-orient(@arg){
+    -webkit-box-orient: @arg;
+    -moz-box-orient: @arg;
+    box-orient: @arg;
+}
+.box-flex(@arg){
+    -moz-box-flex: @arg;
+    -webkit-box-flex: @arg;
+    box-flex: @arg;   
+}
+.box-lines(@arg){
+    -moz-box-lines:@arg;
+    -webkit-box-lines:@arg;
+    box-lines:@arg;
+}
+
+.text-overflow-ellipsis(@line:1) when(@line=1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-overflow-ellipsis(@line) when(@line>1) {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @line;
+    word-break: break-all;
+}
+
+.xyCenter() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+}

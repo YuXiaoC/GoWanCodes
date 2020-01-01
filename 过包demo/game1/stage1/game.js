@@ -1,0 +1,1 @@
+require("stage1.min.js")

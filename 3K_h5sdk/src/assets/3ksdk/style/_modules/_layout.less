@@ -1,0 +1,107 @@
+@import "_animation.less";
+
+.3d(@x, @y, @z){
+    transform: translate3d(@x + 0px, @y + 0px, @z + 0px);
+}
+
+.center(){
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.abCenter(@w, @h) {
+    position: absolute;
+    width: @w + 0px;
+    min-height: @h + 0px;
+    top: 50%;
+    left: 50%;
+    margin-left: @w / -2 + 0px;
+    margin-top: @h / -2 + 0px;
+}
+
+.xyCenter() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+}
+
+.xCenter() {
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+}
+
+.box(){
+    display:-webkit-box;
+    display:-moz-box;
+    display:box;
+}
+.box-align(@arg){
+    -webkit-box-align: @arg;
+    -moz-box-align: @arg;
+    box-align: @arg;
+    
+}
+.box-pack(@arg){
+-webkit-box-pack: @arg;
+    -moz-box-pack: @arg;
+    box-pack: @arg;
+}
+.box-orient(@arg){
+    -webkit-box-orient: @arg;
+    -moz-box-orient: @arg;
+    box-orient: @arg;
+}
+.box-flex(@arg){
+    -moz-box-flex: @arg;
+    -webkit-box-flex: @arg;
+    box-flex: @arg;   
+}
+
+
+
+
+.flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flexYCenter() {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+}
+.flexSpaceAround(){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexSpaceBetween(){
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.flextop() {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex(){
+     display: flex;
+}
+
+.flexChild(){
+    flex:1;
+}

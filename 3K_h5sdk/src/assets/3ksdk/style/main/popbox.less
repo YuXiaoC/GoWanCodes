@@ -1,0 +1,457 @@
+@import '_util.less';
+// 弹窗通用样式
+.popbox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 600;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    &.popbox-notice {
+        z-index: 800;
+    }
+    .popbox-overlay {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        .box-center();
+    }
+    .popbox-container {
+        // position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%, -50%);
+    }
+    .popbox-content {
+        // display: none;
+        // &.show {
+        //     display: block;
+        // }
+    }
+}
+
+// 表单弹窗样式
+.popbox-form {
+    .popbox-container {
+        width: 5.86rem;
+        padding: 0.4rem 0.3rem;
+        background: rgba(0, 0, 0, 0.85);
+        border-radius: 0.08rem;
+    }
+    .pub-title {
+        font-size: 0;
+        margin-bottom: 0.4rem;
+        text-align: center;
+        .text {
+            font-size: 0.32rem;
+            vertical-align: middle;
+            margin: 0 0.1rem;
+        }
+    }
+    .logo {
+        .box-justify();
+        margin-bottom: 0.4rem;
+        font-size: 0;
+        .right {
+            .text {
+                font-size: 0.24rem;
+                margin-left: 0.08rem;
+                vertical-align: middle;
+            }
+        }
+    }
+    .tabs {
+        .box-center();
+        .tab {
+            .box-center();
+            transition: 0.3s ease;
+            width: 50%;
+            height: 0.66rem; // text-align: center;
+            border: 1px solid #504e4e;
+            font-size: 0.28rem;
+            color: #a8a8a8;
+            margin-bottom: 0.25rem;
+            &.active {
+                color: #fff;
+                background: @orange;
+                border-color: @orange;
+            }
+            &:nth-child(1) {
+                border-radius: 0.08rem 0 0 0.08rem;
+            }
+            &:nth-child(2) {
+                border-radius: 0 0.08rem 0.08rem 0;
+            }
+        }
+    }
+    .form {
+        margin-bottom: 0.3rem;
+        .input-item {
+            width: 100%;
+        }
+    }
+    .help {
+        .box-justify();
+        margin-bottom: 0.4rem;
+        font-size: 0;
+        .left {
+            .text {
+                font-size: 0.24rem;
+                margin-left: 0.08rem;
+                vertical-align: middle;
+            }
+        }
+        .right {
+            .text {
+                font-size: 0.24rem;
+                margin-left: 0.08rem;
+                vertical-align: middle;
+            }
+        }
+    }
+    .tip {
+        text-align: center;
+        font-size: 0.24rem;
+        margin-bottom: 0.35rem;
+    }
+    .btns {
+        .box-justify();
+        .btn {
+            position: relative;
+            display: block;
+            border-radius: 0.08rem;
+            font-size: 0.28rem;
+            background: #e5e5e5;
+            color: #757575;
+            height: 0.64rem;
+            line-height: 0.64rem;
+            text-align: center;
+            &.btn-small {
+                width: 2.4rem;
+            }
+            &.btn-big {
+                width: 100%;
+            }
+            &.btn-active {
+                color: #fff;
+                background: @orange;
+            }
+            
+            // line-height: 0.64 * 1.5 / 1.4375rem;
+
+            span {
+                .xyCenter();
+                line-height: normal;
+            }
+        } // &:nth-of-type(1) {
+        //     margin-top: 0.2rem;
+        // }
+    }
+    .bottom-logo {
+        text-align: center;
+        margin-top: 0.3rem;
+    }
+
+    .forget-password {
+        color: @orange;
+        text-decoration: underline;
+    }
+
+  
+
+    .read-protocol {
+        .icon-true{
+            display: none;
+        }
+
+        &.active {
+            .icon-true{
+                display: inline-block;
+            }
+            .icon-false {
+                display: none;
+            }
+        }
+    }
+
+     // 展示登录记录
+    .show-record {
+        // .xyCenter();
+        margin-left: 0.9rem;
+        transition: .3s ease;
+    }
+
+    .login-record-list{
+        position: absolute;
+        top: 0.78rem;
+        left: 0;
+        
+        width: 100%;
+        z-index: 10;
+
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease;
+
+        &.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        ul {
+            border: 1px solid #888;
+            border-radius: 5px;
+            font-size: 0.24rem;
+            padding: 0.02rem 0.2rem;
+            background: #333;
+
+            li {
+                .box();
+                height: 0.6rem;
+                line-height: 0.6rem;
+
+
+                & + li {
+                    border-top: 1px solid #888;
+                }
+
+                .left {
+                    width: 85%;
+                    position: relative;
+                    padding-left: 0.4rem;
+                    span {
+                        // display: block;
+                        // position: absolute;
+                        // top: 50%;
+                        // border: 1px solid red;
+                        // transform: translateY(-50%); 
+                    }
+                }
+
+                .right{
+                    // width: 20%;
+                    width: 15%;
+                    padding-left: 0.32rem;
+                    position: relative;
+                    i {
+                        // position: absolute;
+                        // top: 50%;
+                        // transform: translateY(-50%); 
+                    }
+                }
+            }
+        }
+    }
+}
+
+.popbox-form-login {
+    .help {
+        .right {
+            font-size: 0;
+            color: @orange;
+            text-decoration: underline;
+        }
+    }
+}
+
+.popbox-form-login-nologo {
+    .input-item {
+        .other {
+            text-align: center;
+        }
+        .text {
+            font-size: 0.2rem;
+            color: @orange;
+            text-decoration: underline;
+            text-align: center;
+        }
+    }
+}
+
+.popbox-form-register-merge,
+.popbox-form-register-merge-nologo {
+   
+    .form ,
+    .btns{
+        display: none;
+    }
+  
+    &.use-account {
+        .tabs {
+            .tab:nth-child(1) {
+                color: #fff;
+                background: @orange;
+                border-color: @orange;
+            }
+        }
+        .form-account,
+        .btns-account {
+            display: block;
+        }
+    }
+    &.use-phone {
+        .tabs {
+            .tab:nth-child(2) {
+                color: #fff;
+                background: @orange;
+                border-color: @orange;
+            }
+        }
+        .form-phone,
+        .btns-phone {
+            display: block;
+        }
+    }
+}
+
+// 立刻实名认证弹窗样式
+.popbox-verify {
+    .popbox-content {
+        width: 5.86rem;
+        padding: 0 0.15rem;
+        background: #fff;
+        color: #858585;
+        font-size: 0.28rem;
+        text-align: center;
+        border-radius: 0.08rem;
+        .tip {
+            padding: 0.35rem 0;
+            line-height: 1.2;
+            color: #666;
+        }
+        .btns {
+            border-top: 1px solid #d2d3d5;
+            .box-center();
+            height: 0.94rem;
+            .btn {
+                // text-align: center;
+                height: 100%;
+                .box-center();
+                text-align: center;
+                &.btn-small {
+                    width: 50%;
+                    &:last-child {
+                        border-left: 1px solid #d2d3d5;
+                    }
+                }
+                &.btn-big {
+                    width: 100%;
+                }
+                &.active {
+                    color: @orange;
+                }
+            }
+        }
+    }
+}
+
+// 公告弹窗样式
+.popbox-notice {
+    
+}
+
+.popbox-notice-text {
+    .text-content {
+        width: 5.86rem;
+        background: #000;
+        font-size: 0.28rem;
+        text-align: center;
+        border-radius: 0.08rem;
+        position: relative;
+        .pub-title {
+            font-size: 0.32rem;
+            padding-top: 0.4rem; // padding-bottom: 0.1rem;
+        }
+        .tip {
+            padding: 0.35rem 0.9rem;
+            line-height: 1.2;
+        }
+        .btns {
+            border-top: 1px solid #3f4040;
+            .box-center();
+            height: 0.94rem;
+            .btn {
+                // text-align: center;
+                display: none;
+                height: 100%;
+                .box-center();
+                text-align: center;
+                &.btn-small {
+                    width: 50%;
+                    &:last-child {
+                        border-left: 1px solid #3f4040;
+                    }
+                }
+                &.btn-big {
+                    width: 100%;
+                }
+                &.active {
+                    color: @orange;
+                }
+                &.disabled {
+                    color: #828181;      
+                }
+            }
+        }
+    }
+    .popbox-close-wrap {
+        width: 100%;
+        text-align: center;
+        .icon-close {
+            
+            margin-top: 0.52rem;
+        }
+    }
+}
+
+.popbox-notice-img {
+    img {
+        // max-width: 5.2rem;
+        width: 7.5rem;
+    }
+    .text-img {
+        > a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+           .box-center();
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+    .popbox-close {
+        position: absolute;
+        top: 2rem;
+        right: 0.5rem;
+    }
+}
+
+// 错误弹窗
+.popbox-error {
+    z-index: 700;
+    .popbox-overlay {
+        background: none;
+    }
+
+    .popbox-container {
+        font-size: 0.28rem;
+        padding: 0.2rem 0.3rem;
+        border-radius: 0.08rem;
+        background: rgba(0, 0, 0, 0.8);
+        line-height: 1.5;
+        text-align: center;
+        width: 4.2rem;
+        word-break:break-all;
+    }
+}

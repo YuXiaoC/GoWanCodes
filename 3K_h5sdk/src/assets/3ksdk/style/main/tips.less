@@ -1,0 +1,36 @@
+#tips {
+    display: none;
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#tips .tips-cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#tips .tips-cont i {
+    display: block;
+    margin: 0 auto;
+    width: 1.65rem;
+    height: 1.74rem;
+    background: url("//game.gtimg.cn/images/game/cp/a20170601fbh/i_tips.png") no-repeat;
+    background-size: 1.65rem 1.74rem;
+}
+
+#tips .tips-cont span {
+    display: block;
+    margin-top: .2rem;
+    font-size: .3rem;
+    text-align: center;
+    color: #fff;
+}

@@ -1,0 +1,8 @@
+node_modules
+dist/js
+*.log
+.cache
+*.zip
+build
+build - template
+dev

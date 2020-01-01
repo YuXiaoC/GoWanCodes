@@ -1,0 +1,211 @@
+@import '_util.less';
+#slide-bar {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 10;
+    
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        .slide-bar-content {
+            transform: translateX(0);
+        }
+        .slide-bar-close {
+            transform: translateX(0);
+        }
+    }
+    .slide-bar-overlay {
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+    }
+    .slide-bar-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .slide-bar-content {
+        width: 6rem;
+        height: 100%;
+        // overflow: hidden;
+        background: #000;
+        border-radius: 0 5px 5px 0;
+        transition: 0.3s cubic-bezier(0, 0.6, 0, 0.95);
+        transform: translateX(-6rem);
+        position: relative;
+        padding-bottom: 1.5rem;
+        // overflow: auto;
+        // -webkit-overflow-scrolling: touch;
+    }
+    .slide-bar-content-wrap {
+        height: 13.34rem;
+        background: #000;
+        position: relative;
+    }
+    .slide-bar-close {
+        position: absolute;
+        top: 50%;
+        margin-top: -0.325rem;
+        left: 6.2rem;
+        font-size: 0;
+        transition: 0.3s ease;
+        transform: translateX(7.5rem);
+    }
+    .header-info {
+        height: 2.5rem; // padding-top: 0.63rem;
+        border-bottom: 0.05rem solid #2a2a2a;
+        .box();
+        .box-align(center);
+        .img-info {
+            width: 1.73rem;
+            text-align: right;
+            img {
+                width: 1.22rem;
+                height: 1.22rem;
+                border-radius: 50%;
+                border: 0.05rem solid #333;
+            }
+        }
+        .text-info {
+            padding-left: 0.28rem;
+            .username {
+                font-size: 0.28rem;
+            }
+            .account,
+            .bind-id {
+                color: #a4a4a4;
+                font-size: 0.24rem;
+                margin-top: 0.15rem;
+            }
+        }
+    }
+    .options {
+        .option-item {
+            position: relative;
+            border-bottom: 1px dashed #303643;
+
+            .icon-password-active,
+            .icon-phone-active,
+            .icon-verify-active {
+                display: none;
+            }
+
+            &.active {
+                .option-title {
+                    .name {
+                        color: @orange;
+                    }
+                    .icon-arrow-right {
+                        background-image: url(../../img/icon-arrow-right-active.png);
+                        transform: rotate(90deg);
+                    }
+                }
+                &:nth-child(1) {
+                    .icon-password {
+                        display: none;
+                    }
+                    .icon-password-active {
+                        display: inline-block;
+                    }
+                    .option-content {
+                        height: 5.64rem;
+                    }
+                }
+                &:nth-child(2) {
+                    .icon-phone {
+                        display: none;
+                    }
+                    .icon-phone-active {
+                        display: inline-block;
+                    }
+                    .option-content {
+                        height: 4.52rem;
+                    }
+                }
+                &:nth-child(3) {
+                    .icon-verify {
+                        display: none;
+                    }
+                    .icon-verify-active {
+                        display: inline-block;
+                    }
+                    .option-content {
+                        height: 4.52rem;
+
+                        &.is-verify{
+                            height: 3.42rem;
+                        }
+                    }
+                }
+            }
+            .option-title,
+            .option-title-empty {
+                display: block;
+                height: 1.05rem;
+                line-height: 1.05rem;
+                font-size: 0;
+                .icon {
+                    width: 1.3rem;
+                    text-align: right;
+                }
+                .name {
+                    display: inline-block;
+                    width: 4rem;
+                    padding-left: 0.3rem;
+                    vertical-align: middle;
+                    font-size: 0.28rem;
+                    position: relative;
+                    span {
+                        position: absolute;
+                        line-height: normal;
+                        // left: 0;
+                        top: 10%;
+                        transform: translateY(-50%);
+                    }
+                }
+                .icon-arrow-right {
+                    transition: .3s ease;
+                }
+            }
+            .option-content {
+                background: #1a1a1a;
+                height: 0;
+                overflow: hidden;
+                transition: 0.3s cubic-bezier(0, 0.6, 0, 0.95);
+            }
+        }
+    }
+    .change-account-wrap {
+        position: absolute;
+        bottom: 0;
+        background: #000;
+        height: 1.5rem;
+        width: 100%;
+        .box-center();
+    }
+    .change-account {
+        // position: absolute;
+        // // bottom: 0.52rem;
+        // left: 50%;
+        // top: 12.12rem;
+        width: 2.4rem;
+        height: 0.6rem;
+        // margin-left: -1.2rem;
+        .box-center();
+        color: @orange;
+        border: 1px solid @orange;
+        border-radius: 0.08rem;
+        font-size: 0;
+        span {
+            font-size: 0.28rem;
+            vertical-align: middle;
+            margin-left: 0.12rem;
+        }
+    }
+}

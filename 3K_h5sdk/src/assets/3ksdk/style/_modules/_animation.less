@@ -1,0 +1,14 @@
+//定义动画
+.key(@name; @content) {
+	@keyframes @name {
+		@content();
+	}
+}
+
+
+.animate() {
+    animation-play-state: paused;
+    &.active {
+        animation-play-state: running;
+    }
+}
