@@ -1,0 +1,132 @@
+
+.gowan-logo{
+  .gowan-logo-head{
+    margin-bottom:.4rem;
+    .logo{
+      width: 1.541rem;
+      height: 0.51rem;
+
+    }
+    &:after{
+      content:'';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      clear: both;
+    }
+    .text{
+      font-size: 0.24rem;
+      margin-left: 0.08rem;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+  .gowan-logo-from{
+
+  }
+}
+.icon-phone-login {
+width:0.24rem;
+height:0.24rem;
+background-image:url(../../assets/img/icon-phone-s.png);
+background-size:0.24rem 0.24rem;
+}
+.gowan-help{
+margin: .2rem 0;
+a{
+  text-decoration: none;
+}
+&:after{
+  content:'';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  clear: both;
+}
+.left{
+  .icon-help{
+    width:.24rem;
+    height: .24rem;
+    background-image:url(../../assets/img/icon-help.png);
+    background-size:.24rem .24rem;
+  }
+  .text{
+    font-size: 0.24rem;
+    margin-left: 0.08rem;
+    vertical-align: middle;
+    color:#fff;
+  }
+}
+.right{
+  .text{
+    font-size: 0.24rem;
+    margin-left: 0.08rem;
+    vertical-align: middle;
+    color:#ff9725;
+    text-decoration: underline;
+  }
+}
+
+}
+.other_login {
+  height: 0.71rem;
+  overflow: hidden;
+  margin-bottom: .4rem;
+  text-align: center;
+  a {
+    text-decoration: none;
+    width: 0.71rem;
+    height: 100%;
+    // float: right;
+    display: inline-block;
+    img{
+      width: 0.71rem;
+      height: 100%
+    }
+  }
+  .qq{
+    margin-right: .51rem
+  }
+}
+.gowan-btns{
+  .btn{
+    width:2.4rem;
+    position: relative;
+    display: block;
+    border-radius: 0.08rem;
+    font-size: 0.28rem;
+    background: #e5e5e5;
+    color: #757575;
+    height: 0.64rem;
+    line-height: 0.64rem;
+    text-align: center;
+    &.active{
+      background:#ff9725;
+      color:#fff;
+    }
+  }
+}
+/*手机号码登录*/
+.input-item .other > *{
+  display: inline-block;
+  vertical-align: middle;
+}
+.other {
+  span{
+    font-size: .24rem;
+    color: #ff9725;
+    height: .35rem;
+    line-height: .35rem;
+    width: 100%;
+    border: 1px solid #ff9725;
+    position: absolute;
+    top: 28%;
+    border-radius: .08rem;
+    text-align: center;
+    right: .2rem;
+    cursor: pointer;
+  }
+  .icon-register{
+    
+  }
+}

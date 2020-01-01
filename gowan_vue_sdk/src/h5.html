@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="applicable-device" content="mobile">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>CP</title>
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        p,
+        blockquote,
+        pre,
+        hr,
+        figure,
+        table,
+        caption,
+        th,
+        td,
+        form,
+        fieldset,
+        legend,
+        input,
+        button,
+        textarea,
+        menu {
+            margin: 0;
+            padding: 0
+        }
+
+        html,
+        body,
+        fieldset,
+        img,
+        iframe,
+        abbr {
+            border: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        textarea {
+            overflow: auto;
+            resize: none;
+        }
+
+        a,
+        button {
+            cursor: pointer;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+        }
+
+        body,
+        html {
+            height: 100%;
+            font-weight: normal;
+            background: #fff;
+            font-size: 0.26rem;
+            line-height: 1;
+        }
+
+        html {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            font-family: "Microsoft YaHei", Arial, HelveticaNeue, Helvetica, "BBAlpha Sans", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        input,
+        select,
+        textarea,
+        option {
+            font-size: inherit;
+            color: inherit;
+            border: 0;
+            outline: none;
+        }
+
+        a,
+        img,
+        i,
+        input,
+        div {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            /* -webkit-appearance: none;  导致radio不显示*/
+        }
+
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+    </style>
+    <script src="//ptstatic.3k.com/vconsole.min.js"></script>
+    <script type="text/javascript">
+        //初始化 font-size
+        function setFontSize(k) {
+            document.documentElement.style.fontSize =
+                ((((k / 750) * 100) / 16) * 100) + '%';
+        }
+
+        function initRem() {
+            var W = document.documentElement.clientWidth;
+            var H = document.documentElement.clientHeight;
+            if (W < H) {
+                setFontSize(W);
+            } else {
+                setFontSize(H);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', initRem, false);
+        initRem();
+    </script>
+    <link href="//cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet">
+    <!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</head>
+
+<body>
+    <style>
+        #main iframe {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        #main .test {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            opacity: 0.8;
+            background-color: rgba(255, 255, 255, .7);
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #main .test a {
+            width: 80%;
+            height: 1rem;
+            line-height: 1rem;
+            margin: 0.5rem auto;
+            color: #fff;
+            text-align: center;
+            font-size: 0.3rem;
+            background-color: rgb(0, 94, 235);
+            display: block;
+        }
+
+        /* #controller a.active .form{
+            display: fixed
+        }
+
+        .form {
+            display: fixed;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+        } */
+
+        .controls .input-prepend {
+            height: 30px;
+        }
+
+        .controls .input-prepend>* {
+            height: 100%;
+        }
+
+        .control-group .control-label {
+            width: 125px;
+        }
+
+        .control-group .controls {
+            margin-left: 165px;
+        }
+
+        .form-horizontal .control-group {
+            margin-bottom: 5px;
+        }
+
+        .form-client .control-label {
+            color: #a53636;
+        }
+
+        /* .form-fuse .control-label{
+            color: #c57707;
+        } */
+    </style>
+    <div id="main">
+        <!-- <iframe src="http://h5gamedemo.3kwan.com:82/game/" frameborder="0"></iframe> -->
+        <div class="test" id="controller">
+
+            <a href="javascript:;">tip: 红色为客户端额外字段</a>
+            <a href="javascript:;">通用数据</a>
+            <form class="form-horizontal form form-common form-createRole">
+                <fieldset>
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">服务器id</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="serverId" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">服务器名称</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="serverName" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">角色id</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="roleId" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">角色名称</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="roleName" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">角色等级</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="roleLevel" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">角色用户余额</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="userMoney" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">vip等级</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="vipLevel" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+            <form class="form-horizontal form form-client form-recharge">
+                <fieldset>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">角色创建时间</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="roleCTime" value="1518162728504" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">性别</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="gender" value="男" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">职业ID</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="professionId" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">职业名称</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="profession" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">战力值</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="power" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">帮派ID</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="partyid" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">帮派名称</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="partyname" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">帮派称号ID</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="partyroleid" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">帮派称号名称</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="partyrolename" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">好友列表</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="friendList" value="" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+            <a href="javascript:;" data-type="1" event="init">初始化</a>
+
+            <form class="form-horizontal form form-client form-init">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label">是否横版登陆</label>
+                        <div class="controls">
+                            <!-- Inline Radios -->
+                            <label class="radio inline">
+                                    <input type="radio" value="1" name="isLandscape">是
+                                </label>
+                            <label class="radio inline">
+                                    <input type="radio" value="0" checked="checked" name="isLandscape">否
+                                </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">浮动图标位置</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="floatLocation" value="0" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">汇率</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="rate" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">游戏币名</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="productName" value="元宝" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">debug</label>
+                        <div class="controls">
+                            <!-- Inline Radios -->
+                            <label class="radio inline">
+                                        <input type="radio" value="1" checked="checked" name="debug">是
+                                    </label>
+                            <label class="radio inline">
+                                        <input type="radio" value="0" name="debug">否
+                                    </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+            <a href="javascript:;" data-type="2" event="login">登陆</a>
+            <a href="javascript:;" data-type="3" event="changeAccount">切换账号</a>
+
+            <a href="javascript:;" data-type="4" event="recharge">充值（使用通用数据）</a>
+            <a href="javascript:;" data-type="4" event="expend">道具消耗</a>
+            <form class="form-horizontal form form-recharge">
+                <fieldset>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">金额（分）</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="amount" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">CP通知URL</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <!-- <input name="callbackURL" value="1" class="span2" placeholder="" id="prependedInput" type="text"> -->
+                                <textarea name="callbackURL" class="span2" placeholder="" id="prependedInput"></textarea>
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">CP回调参数</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">可选</span>
+                                <input name="callbackInfo" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+            <form class="form-horizontal form form-client form-recharge">
+                <fieldset>
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">商品ID</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="cpProductId" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">公会</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="sociaty" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">用户余额</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">必填</span>
+                                <input name="lastMoney" value="1" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">支付描述信息</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">可选</span>
+                                <input name="chargeDesc" value="" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <!-- Prepended text-->
+                        <label class="control-label">充值游戏币数量</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">可选</span>
+                                <input name="chargeMount" value="0" class="span2" placeholder="" id="prependedInput" type="text">
+                            </div>
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+            <a href="javascript:;" data-type="5" event="createRole">角色创建（使用通用数据）</a>
+            <a href="javascript:;" data-type="6" event="changeRole">切换角色登录（使用通用数据）</a>
+
+            <a href="javascript:;" data-type="7" event="upgradeRole">角色升级（使用通用数据）</a>
+
+            <a href="javascript:;" data-type="8" event="getUserID">获取当前用户id</a>
+            <a href="javascript:;" data-type="9" event="getPTID">获取游戏接入平台渠道id</a>
+            <a href="javascript:;" data-type="10" event="getFromID">获取渠道分发id</a>
+            <a href="javascript:;" data-type="16" event="getPlatform">获取手机系统</a>
+
+            <a href="javascript:;" data-type="11" event="goToGM">跳转客服页面接口</a>
+
+            <a href="javascript:;" data-type="12" event="checkRealNameAuth">查询实名认证接口</a>
+            <a href="javascript:;" data-type="13" event="checkBindPhone">检测用户是否绑定手机</a>
+            <a href="javascript:;" data-type="14" event="goToBindPhone">跳转到绑定手机页面</a>
+            <a href="javascript:;" data-type="15" event="goToUserCenter">跳转浮标到个人/账号中心</a>
+            <a href="javascript:;" data-type="17" event="exitGame">退出游戏</a>
+            <a href="javascript:;" data-type="18" event="checkPubAccount">是否关注QQ公众号</a>
+            <a href="javascript:;" data-type="19" event="bannerAd">拉取banner广告</a>
+            <a href="javascript:;" data-type="20" event="createShortCut">创建快捷方式</a>
+
+        </div>
+    </div>
+    <!-- <script src="http://h5sdk.gowan8.com/js/h5sdk.js" charset="utf-8"></script> -->
+    <script src="http://h5.gowanme.com/js/h5sdk.js" charset="utf-8"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.min.js"></script>
+    <script src="https://www.promisejs.org/polyfills/promise-6.1.0.js"></script> -->
+    <!-- <script src="http://h5gamedemo.3kwan.com:82/h5sdk/h5sdk.js"></script> -->
+    <!-- <script src="//h5game.3k.com/h5sdk/h5sdk.js"></script> -->
+    <script>
+        // cp数据保存
+        window.cpData = {
+            // 1. 通用字段
+            // 1.1 融合和客户端通用字段
+            serverId: '1',
+            serverName: '1',
+            roleId: '1',
+            roleName: '1',
+            roleLevel: '1',
+            userMoney: '1',
+            vipLevel: '1',
+
+            // 1.2 客户端额外通用字段
+            roleCTime: '1518162728504', // string	Y	角色创建时间（10位unix时间戳）
+            gender: '男', // string	Y	性别（若无传“”，有传男、女）
+            professionId: 1, // int	Y	当前登录玩家的职业ID（若无传0）
+            profession: '1', // string	Y	当前登录玩家的职业名称（若无传“”）
+            power: 1, // int	Y	战力值 （若无传0）
+            partyid: '1', // string	Y	当前玩家的所属帮派帮派ID（若无传“”）
+            partyname: '1', // string	Y	当前玩家的所属帮派帮派名称（若无传“”）
+            partyroleid: 1, // int	Y	帮派称号ID（若无传0）
+            partyrolename: '1', // string	Y	帮派称号名称（若无传“”）
+            friendList: [],
+
+            // 2. 初始化字段
+            // 2.1 客户端额外通用字段
+            isLandscape: false, //	是否横版登陆	Boolean
+            floatLocation: 1, // 	浮动图标位置: 0,// int
+            rate: 1, //	人民币与游戏币的汇率 比如1元=10元宝: 0,// int
+            productName: '元宝', //	游戏币名(元宝/金币/钻石): '',// string
+            debug: true, //	是否打开测试环境（不加该参数可能看不到错误日志）	Boolean
+
+            // 3. 充值字段
+            // 3.1 融合和客户端通用字段
+            amount: '1',
+            callbackURL: '1',
+            callbackInfo: '',
+            // 3.2 客户端额外字段
+            cpProductId: '1', //..	商品ID	Y: '',// string
+            sociaty: '1', //	公会/帮派名	Y: '',// string
+            lastMoney: '1', //	用户余额	Y: '',// string
+            chargeDesc: '', // 支付描述信息	N: '',// string
+            chargeMount: 0, //t	充值游戏币数量	N: '',// int
+
+            // 消耗道具
+            stageName:"砖石",   //游戏货币名（如元宝，金币）
+            stageNum:1     //游戏币数量
+        }
+
+        Array.prototype.slice.call(document.querySelectorAll('input')).forEach(function(item) {
+            item.addEventListener('change', function(e) {
+                // console.log('change',e)
+                switch (e.target.name) {
+                    case 'friendList':
+                        var friendList = []
+                        try {
+                            friendList = JSON.parse(e.target.value)
+                        } catch (error) {
+
+                        }
+                        window.cpData[e.target.name] = friendList
+                        break;
+
+                    case 'isLandscape':
+                    case 'debug':
+                        window.cpData[e.target.name] = e.target.value == 1 ? true : false
+                        break
+                    default:
+                        window.cpData[e.target.name] = e.target.value
+                }
+                // console.log(window.cpData)
+            })
+        })
+
+        document.getElementById('controller').addEventListener('click', function(e) {
+            var el = e.target
+            var id = el.getAttribute('data-type')
+            var event = el.getAttribute('event')
+            // console.log('event',event)
+            if (!event) return
+
+            // console.log(el)
+            // console.log(el.tagName)
+            // console.log(el.tagName.toLocaleLowerCase() === 'a')
+            if (el.tagName.toLocaleLowerCase() === 'a') {
+                var postData = {}
+
+                var commonData = {
+                    serverId: window.cpData.serverId,
+                    serverName: window.cpData.serverName,
+                    roleId: window.cpData.roleId,
+                    roleName: window.cpData.roleName,
+                    roleLevel: window.cpData.roleLevel,
+                    userMoney: window.cpData.userMoney,
+                    vipLevel: window.cpData.vipLevel,
+                }
+
+                if (window.isApp) {
+                    // 客户端环境中
+                    var clienData = {
+                        roleCTime: window.cpData.roleCTime,
+                        gender: window.cpData.gender,
+                        professionId: window.cpData.professionId,
+                        profession: window.cpData.profession,
+                        power: window.cpData.power,
+                        partyid: window.cpData.partyid,
+                        partyname: window.cpData.partyname,
+                        partyroleid: window.cpData.partyroleid,
+                        partyrolename: window.cpData.partyrolename,
+                        friendList: window.cpData.friendList,
+                    }
+
+                    if (event == 'init') {
+                        postData = {
+                            isLandscape: window.cpData.isLandscape,
+                            floatLocation: window.cpData.floatLocation,
+                            rate: window.cpData.rate,
+                            productName: window.cpData.productName,
+                            debug: window.cpData.debug,
+                        }
+                    } else if (event == 'recharge') {
+                        postData = {
+                            // ...commonData,
+                            serverId: window.cpData.serverId,
+                            serverName: window.cpData.serverName,
+                            roleId: window.cpData.roleId,
+                            roleName: window.cpData.roleName,
+                            roleLevel: window.cpData.roleLevel,
+                            // userMoney: window.cpData.userMoney,
+                            vipLevel: window.cpData.vipLevel,
+
+                            amount: window.cpData.amount,
+                            cpProductId: window.cpData.cpProductId,
+                            productName: window.cpData.productName,
+                            callbackURL: window.cpData.callbackURL,
+                            callbackInfo: window.cpData.callbackInfo,
+                            chargeDesc: window.cpData.chargeDesc,
+                            chargeMount: window.cpData.chargeMount,
+                            lastMoney: window.cpData.lastMoney,
+                            sociaty: window.cpData.sociaty,
+                        }
+
+                    } else if (event == 'createRole' || event == 'changeRole' || event == 'upgradeRole') {
+                        postData = {
+                            // ...commonData,
+                            serverId: window.cpData.serverId,
+                            serverName: window.cpData.serverName,
+                            roleId: window.cpData.roleId,
+                            roleName: window.cpData.roleName,
+                            roleLevel: window.cpData.roleLevel,
+                            // userMoney: window.cpData.userMoney,
+                            vipLevel: window.cpData.vipLevel,
+
+                            ///...clientData,
+                            roleCTime: window.cpData.roleCTime,
+                            gender: window.cpData.gender,
+                            professionId: window.cpData.professionId,
+                            profession: window.cpData.profession,
+                            power: window.cpData.power,
+                            partyid: window.cpData.partyid,
+                            partyname: window.cpData.partyname,
+                            partyroleid: window.cpData.partyroleid,
+                            partyrolename: window.cpData.partyrolename,
+                            friendList: window.cpData.friendList,
+                        }
+
+                    }
+                } else {
+                    // web 环境中
+                    if (event == 'recharge') {
+                        postData = {
+                            // ...commonData,
+                            serverId: window.cpData.serverId,
+                            serverName: window.cpData.serverName,
+                            roleId: window.cpData.roleId,
+                            roleName: window.cpData.roleName,
+                            roleLevel: window.cpData.roleLevel,
+                            userMoney: window.cpData.userMoney,
+                            vipLevel: window.cpData.vipLevel,
+
+                            amount: window.cpData.amount,
+
+                            cpProductId: window.cpData.cpProductId,
+                            productName: window.cpData.productName,
+
+                            callbackURL: window.cpData.callbackURL,
+                            callbackInfo: window.cpData.callbackInfo,
+
+                            // TODO 与后端
+                            chargeDesc: window.cpData.chargeDesc,
+                            chargeMount: window.cpData.chargeMount,
+                            lastMoney: window.cpData.lastMoney,
+                            sociaty: window.cpData.sociaty,
+                        }
+                    } else if (event == 'createRole' || event == 'changeRole' || event == 'upgradeRole') {
+                        postData = {
+                            // ...commonData,
+                            serverId: window.cpData.serverId,
+                            serverName: window.cpData.serverName,
+                            roleId: window.cpData.roleId,
+                            roleName: window.cpData.roleName,
+                            roleLevel: window.cpData.roleLevel,
+                            userMoney: window.cpData.userMoney,
+                            vipLevel: window.cpData.vipLevel,
+
+                            roleCTime: window.cpData.roleCTime,
+                            gender: window.cpData.gender,
+                            professionId: window.cpData.professionId,
+                            profession: window.cpData.profession,
+                            power: window.cpData.power,
+                            partyid: window.cpData.partyid,
+                            partyname: window.cpData.partyname,
+                            partyroleid: window.cpData.partyroleid,
+                            partyrolename: window.cpData.partyrolename,
+                            friendList: window.cpData.friendList,
+                        }
+                    } else if(event=='expend') {
+                        postData = {
+
+                        }
+                    }
+                }
+
+                console.log('传入数据：' + event + ':', postData)
+
+                kkkSDK[event](postData).then(function(res) {
+                    console.log('成功调用' + event + ':', res)
+                    if (event == 'changeAccount') {
+                        console.log('listen login')
+                        // kkkSDK.listen('login', function(res) {
+                        //     console.log('成功调用listen:login:', res)
+                        // })
+                    }
+                })
+            }
+        }, false)
+
+        // setTimeout(function() {
+        //     // alert(1)
+        //     console.log('new one')
+        //     kkkSDK.on('flymeChangeAccount', function(res) {
+        //         console.log('成功调用listen:flymeChangeAccount:', res)
+        //         kkkSDK.changeAccount().then(function(res) {
+        //             console.log('成功调用changeAccount:', res)
+        //             // kkkSDK.one('loginResponse', function(res) {
+        //             //     console.log('成功调用login:' , res)
+        //             // })
+        //             kkkSDK.listen('login', function(res) {
+        //                 console.log('成功listen:login:' , res)
+        //             })
+        //         })
+        //     }, true)
+        //     kkkSDK.listen('login', function(res) {
+        //         console.log('成功listen2:login:' , res)
+        //     }, true)
+        //     kkkSDK.isApp().then(function(res) {
+        //         console.log(res)
+        //         window.isApp = res.mark
+        //         console.log('isApp', window.isApp)
+        //     })
+        // }, 1000)
+    </script>
+</body>
+
+</html>
