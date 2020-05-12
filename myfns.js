@@ -1,8 +1,15 @@
-// 深克隆
+
+/* 
+* 深克隆
+* deepClone (origin,target)
+* @parmas 
+* origin：源对象
+* target：目标对象
+*/
 function deepClone (origin,target) {
     var target = target || {},
-    tostr = Object.prototype.toString,
-    arrStr = "[object Array]";
+        tostr = Object.prototype.toString,
+        arrStr = "[object Array]";
     for(var prop in origin){
         // hasOwnProperty
         if(origin.hasOwnProperty(prop)){
@@ -18,4 +25,5 @@ function deepClone (origin,target) {
             }
         }
     }
+    return target
 }
